@@ -1,2 +1,2 @@
 # ReactTraining
-Playground for react training and associated
+Playground for react web development.
