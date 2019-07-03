@@ -12,14 +12,36 @@
             class MyComponent extends React.Component {
                 render(){
                     return <div>
-                        <h1>Hello World</h1>
-                        <p>This is my first component.</p>
+                        <h1>{this.props.text}</h1>
+                        <p>{this.props.children}</p>
                     </div>
                 }
 
             }
+            const StatelessComponent = () => {
+                return <div>
+                        <h1>Stateless</h1>
+                        <p>No props, just JSX.</p>
+                    </div>
+            }
+            ReactDOM.render(
+                <div>
+                    <MyComponent text="Hello World">
+                        This is message 1
+                    </MyComponent>
+                    <MyComponent text="I am a component">
+                        This is message 2
+                    </MyComponent>
+                    <MyComponent text="I am being reused">
+                        This is message 3
+                    </MyComponent>
+                    <StatelessComponent />
+                </div>,
+                document.getElementById('react-container'));
 
-            ReactDOM.render(<MyComponent />, document.getElementById('react-container'));
+
+
+
         </script>
     </body>
 </html>
