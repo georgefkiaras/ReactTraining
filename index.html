@@ -10,7 +10,6 @@
     <body>
         <div id='container1'></div>
         <div id='container2'></div>
-        <p>This paragraph should be unaffected by REACT.</p>
         <script type="text/babel">
             class Note extends React.Component {
                 edit(){
@@ -61,8 +60,8 @@
                 }
             }
 
-            ReactDOM.render(<Note>Hello World</Note>, document.getElementById('container2'))
-            ReactDOM.render(<Checkbox/>, document.getElementById('container1'))
+            ReactDOM.render(<Note>Hello World</Note>, document.getElementById('container1'))
+            ReactDOM.render(<Checkbox/>, document.getElementById('container2'))
         </script>
     </body>
 </html>
