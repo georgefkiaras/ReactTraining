@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	
         <title>My First React File</title>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.js"></script>
     </head>
     <body>
-        <h1>React Training</h1>
-        <p>Following along the training video.</p>
+        <div id='react-container'></div>
+        <script type="text/babel">
+            class MyComponent extends React.Component {
+                render(){
+                    return <div>
+                        <h1>Hello World</h1>
+                        <p>This is my first component.</p>
+                    </div>
+                }
+
+            }
+
+            ReactDOM.render(<MyComponent />, document.getElementById('react-container'));
+        </script>
     </body>
 </html>
