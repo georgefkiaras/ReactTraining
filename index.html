@@ -8,7 +8,9 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div id='react-container'></div>
+        <div id='container1'></div>
+        <div id='container2'></div>
+        <p>This paragraph should be unaffected by REACT.</p>
         <script type="text/babel">
             class Note extends React.Component {
                 edit(){
@@ -30,7 +32,37 @@
                 }
             }
 
-            ReactDOM.render(<Note>Hello World</Note>, document.getElementById('react-container'))
+            class Checkbox extends React.Component {
+                constructor(props){
+                    super(props);
+                    this.state = {
+                        checked: false,
+                        msg : "Unchecked"
+                    };
+                    this.handleCheck = this.handleCheck.bind(this);
+                }
+
+                handleCheck() {
+                        if(this.state.checked){
+                            this.setState({checked: false, msg : "Unchecked"})
+                        }
+                        else{
+                            this.setState({checked: true, msg: "Checked"})
+                        }
+                }
+
+                render(){
+                    return(
+                        <div>
+                            <input type="checkbox" onChange={this.handleCheck} />
+                            <p>{this.state.msg}</p>
+                        </div>
+                    )
+                }
+            }
+
+            ReactDOM.render(<Note>Hello World</Note>, document.getElementById('container2'))
+            ReactDOM.render(<Checkbox/>, document.getElementById('container1'))
         </script>
     </body>
 </html>
